@@ -35,6 +35,11 @@ app.get('/', (req, res) => {
 	res.sendFile(__dirname + views + 'koko.html');
 });
 
+// opening the background color route
+app.get('/color', (req, res) => {
+  res.sendFile(__dirname + views + 'color.html');
+});
+
 // base css file
 app.get('/base.css', (req, res) => {
   res.sendFile(__dirname + views + 'base.css');

@@ -35,6 +35,10 @@ function response(command, socket) {
         oldArgs[0] === "SCISSORS" ||
         oldArgs[0] === "PAPER") {
         result = rockPaperScissors.default(oldArgs[0]);
+    }else
+    if(oldArgs[0] === "COLOR") {
+        socket.broadcast.emit('changeColor', oldArgs[1].toLowerCase());
+        result = `changed the color to ${oldArgs[1]}!`;
     }
     else {
         result = `I am sorry! I don't know what to do!`;
