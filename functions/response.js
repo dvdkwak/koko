@@ -5,7 +5,7 @@ var rockPaperScissors = require('./games/rockPaperScissors.js');
 var lastCommand;
 
 // controlling method to start the other methods
-function response(command, socket) {
+function response(command, socket, settings) {
     let result = ""; // result given to the response window
     ucommand = command;
     ucommand = ucommand.toUpperCase();
@@ -38,6 +38,7 @@ function response(command, socket) {
     }else
     if(oldArgs[0] === "COLOR") {
         socket.broadcast.emit('changeColor', oldArgs[1].toLowerCase());
+        settings.currentColor = oldArgs[1].toLowerCase();
         result = `changed the color to ${oldArgs[1]}!`;
     }
     else {

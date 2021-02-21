@@ -58,9 +58,7 @@ class ColorScreen extends React.Component {
             backgroundColor: this.state.color
         }
         return(
-            <div className="colorScreen" style={style}>
-                <h1>I am the color screen!</h1>
-            </div>
+            <div className="colorScreen" style={style}></div>
         );
     } // end of render
 }

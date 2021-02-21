@@ -26,9 +26,15 @@ for (const name of Object.keys(nets)) {
 var views = '/views/';
 var port = 3000;
 var windows = []; // here we save all connected windows
+var settings = {
+  currentColor: ''
+}; // here we save the last set color
 
 // response is the first function all commands go to
 var response = require('./functions/response');
+
+// function which handles all different authentication responses
+var handleAuthenticationResponse = require('./functions/handleAuthenticationResponse.js');
 
 // opening up Koko (express server)
 app.get('/', (req, res) => {
@@ -64,6 +70,8 @@ io.on('connection', (socket) => {
     // adding the window to the array of windows
     windows.push({ id: socket.id, name: res});
     console.log(`\n ~${res}~`.bold.bgGreen + ` connected to the server `.bgGreen);
+    // handle different responses of the authentication
+    handleAuthenticationResponse.default(res, socket, settings);
   });
   socket.on('disconnect', () => {
     // removing the connect window form the windows
@@ -76,7 +84,7 @@ io.on('connection', (socket) => {
   });
   // the respond functions
   socket.on('command', (res) => {
-    response.default(res, socket);
+    response.default(res, socket, settings);
   });
 });
 
