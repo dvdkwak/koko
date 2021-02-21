@@ -34,7 +34,7 @@ class Koko extends React.Component {
             <div className="Koko">
                 <h1>Hi! I am Koko!</h1>
                 <AskMe socket={this.socket} />
-                <ResponseWindow socket={this.socket} />
+                <ResponseWindow socket={this.socket} max={10} />
             </div>
         );
     } // end of render

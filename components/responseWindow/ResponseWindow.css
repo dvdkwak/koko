@@ -1,0 +1,9 @@
+.responseWindow > p {
+    display: block;
+    position: relative;
+    background: red;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin: 5px auto;
+}

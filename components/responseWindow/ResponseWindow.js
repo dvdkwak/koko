@@ -11,12 +11,19 @@ class ResponseWindow extends React.Component {
 
     /**
      * Method handeling all socket emits 'n stuff
+     * Handels message not more than given maximum on screen, and removes messages older than 10 seconds.
      */
     handleSocket() {
         this.props.socket.on('response', (response) => {
             this.state.responses.push(response);
-            if(this.state.responses.length > 10) {
-                while(this.state.responses.length > 10) {
+            setTimeout(() => {
+                this.state.responses.shift();
+                this.setState({
+                    responses: this.state.responses
+                });
+            }, 10000);
+            if(this.state.responses.length > this.props.max) {
+                while(this.state.responses.length > this.props.max) {
                     // maximum of 10 responses
                 this.state.responses.shift();
                 }
