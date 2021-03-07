@@ -36,30 +36,9 @@ var response = require('./functions/response');
 // function which handles all different authentication responses
 var handleAuthenticationResponse = require('./functions/handleAuthenticationResponse.js');
 
-// opening up Koko (express server)
-app.get('/', (req, res) => {
-	res.sendFile(__dirname + views + 'koko.html');
-});
-
-// opening the background color route
-app.get('/color', (req, res) => {
-  res.sendFile(__dirname + views + 'color.html');
-});
-
-// base css file
-app.get('/base.css', (req, res) => {
-  res.sendFile(__dirname + views + 'base.css');
-});
-
-// generating all routes to the components folder
-app.get('/components/*', (req, res) => {
-  res.sendFile(__dirname + req.path);
-});
-
-// generating all asset routes to the source folder
-app.get('/assets/*', (req, res) => {
-  res.sendFile(__dirname + req.path);
-});
+// including the routes file
+getRoutes = require('./routes');
+getRoutes.default(app, views);
 
 // all rules what to do on events with the connected party
 io.on('connection', (socket) => {

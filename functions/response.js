@@ -40,6 +40,16 @@ function response(command, socket, settings) {
         socket.broadcast.emit('changeColor', oldArgs[1].toLowerCase());
         settings.currentColor = oldArgs[1].toLowerCase();
         result = `changed the color to ${oldArgs[1]}!`;
+    }else
+    if(oldArgs[0] === "DICE") {
+        // here all dice commands
+        if(oldArgs[1] === "ROLL") {
+            socket.broadcast.emit('rollDice', true);
+            result = `Rolled the dice!`;
+        }
+        else {
+            result = `I am sorry! I don't know this dice command!`;
+        }
     }
     else {
         result = `I am sorry! I don't know what to do!`;
