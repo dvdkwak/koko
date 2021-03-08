@@ -21,7 +21,31 @@ class KokoFace extends React.Component {
     ];
 
 
+    /**
+     * Method which handles props and calls the handleSocket method
+     * @param {*} props Properties given to the object
+     */
+    constructor(props) {
+        super(props);
+        this.socket = io();
+        this.handleSocket();
+    } // end of constructor
 
+
+    /**
+     * Authenticating to the KOKO system as 'dice window'
+     */
+    handleSocket() {
+        // authenticating as Koko-Face
+        this.socket.on('authenticate', () => {
+            this.socket.emit('authenticateResponse', 'Koko-Face');
+        });
+    } // end of handleSocket
+
+
+    /**
+     * Rendering method to render the bitMap to a gridview (table)
+     */
     renderBitMap() {
         let i = 0; // to generate the keys for the rows
         let j = 0; // to generate the keys for the cells
