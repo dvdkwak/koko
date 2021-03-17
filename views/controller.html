@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Koko</title>
+
+    <!-- styling sheets for the components if needed -->
+    <link rel="stylesheet" href="components/kokoFace/kokoFace.css" />
+	<link rel="stylesheet" href="components/controller/Controller.css" />
+</head>
+<body>
+	<!-- initializing react app -->
+	<div id="root"></div>
+
+	<!-- adding react and babel for jsx -->
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+	<!-- Importing all react components -->
+
+	<!-- default app -->
+	<script type="text/babel" src="/components/controller/Controller.js"></script>
+
+	<!-- react initializer -->
+	<script type="text/babel">
+		ReactDOM.render(<Controller />, document.getElementById('root'));
+	</script>
+
+	<!-- socket io -->
+	<script src="/socket.io/socket.io.js"></script>
+</body>
+</html>
