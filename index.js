@@ -56,10 +56,16 @@ io.on('connection', (socket) => {
     // removing the connect window form the windows
     let index = windows.findIndex(window => window.id === socket.id);
     let closedWindow = windows.splice(index, 1);
-    console.log(`\n ~${closedWindow[0].name}~`.bold.bgRed.white + ` disconnected from the server `.bgRed.white);
+    if(typeof closedWindow[0] !== 'undefined') {
+      console.log(`\n ~${closedWindow[0].name}~`.bold.bgRed.white + ` disconnected from the server `.bgRed.white);
+    }
   });
   socket.on('ping', (res) => {
     console.log(res);
+  });
+  // the mario functions
+  socket.on('mario', (res) => {
+    socket.broadcast.emit('mario', res);
   });
   // the respond functions
   socket.on('command', (res) => {
