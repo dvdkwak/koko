@@ -26,24 +26,39 @@ function getRoute(app, views) {
         res.sendFile(__dirname + views + 'face.html');
     });
 
+    // route to test phaser (Mario)
+    app.get('/mario', (req, res) => {
+        res.sendFile(__dirname + views + 'mario.html');
+    });
+
+    // route to test controller (Mario)
+    app.get('/controller', (req, res) => {
+        res.sendFile(__dirname + views + 'controller.html');
+    });
+
     // base css file
     app.get('/base.css', (req, res) => {
-    res.sendFile(__dirname + views + 'base.css');
+        res.sendFile(__dirname + views + 'base.css');
     });
 
     // generating all routes to the components folder
     app.get('/components/*', (req, res) => {
-    res.sendFile(__dirname + req.path);
+        res.sendFile(__dirname + req.path);
     });
 
     // generating all asset routes to the source folder
     app.get('/assets/*', (req, res) => {
-    res.sendFile(__dirname + req.path);
+        res.sendFile(__dirname + req.path);
     });
 
     // getting all within the lib folder
     app.get('/lib/*', (req, res) => {
-    res.sendFile(__dirname + req.path);
+        res.sendFile(__dirname + req.path);
+    });
+
+    // getting all within game folder
+    app.get('/game/*', (req, res) => {
+        res.sendFile(__dirname + req.path);
     });
 } // end of getRoute
 
