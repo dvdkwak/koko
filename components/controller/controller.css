@@ -1,0 +1,31 @@
+.Controller {
+    background: black;
+}
+
+.Controller button {
+    padding: 20px 10px;
+}
+
+.Controller button#up {
+    position: fixed;
+    top: 20px;
+    left: 100px;
+}
+
+.Controller button#down {
+    position: fixed;
+    top: 100px;
+    left: 100px;
+}
+
+.Controller button#left {
+    position: fixed;
+    top: 50px;
+    left: 20px;
+}
+
+.Controller button#right {
+    position: fixed;
+    top: 50px;
+    left: 180px;
+}
