@@ -1,0 +1,37 @@
+body {
+  background: red;
+  color: white;
+  background-image: url('/assets/clock-wp.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.clock_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  background: rgba(71, 42, 104, 0.6);
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+.clock > p {
+  font-size: 20vw;
+  font-family: 'Roboto', sans-serif;
+  font-weight: thin;
+}
+
+.clock > p > span#seconds {
+  margin-left: 2vw;
+  font-size: 5vw;
+}

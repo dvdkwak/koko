@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- font style (Roboto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
+
+  <!-- component stylesheets -->
+  <link rel="stylesheet" href="/components/responseWindow/ResponseWindow.css" />
+  <link rel="stylesheet" href="/components/clock/clock.css" />
+
+  <title>Koko | Clock</title>
+</head>
+<body>
+  <!-- init react app -->
+  <div id="root"></div>
+
+  <!-- including react and babel CDN -->
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js" integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- default app -->
+	<script type="text/babel" src="/components/clock/Clock.js"></script>
+
+  <!-- react initializer -->
+	<script type="text/babel">
+		ReactDOM.render(<Clock />, document.getElementById('root'));
+	</script>
+
+  <!-- initializing socket.io -->
+  <script src="/socket.io/socket.io.js"></script>
+</body>
+</html>
