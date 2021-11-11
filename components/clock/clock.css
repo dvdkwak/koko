@@ -29,6 +29,8 @@ body {
   font-size: 20vw;
   font-family: 'Roboto', sans-serif;
   font-weight: thin;
+  /* text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18; */
+  text-shadow: 0 0 5px #fdff94, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #ff78fd, 0 0 30px #ff78fd, 0 0 40px #ff78fd, 0 0 55px #ff78fd, 0 0 75px #ff78fd;
 }
 
 .clock > p > span#seconds {

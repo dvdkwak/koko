@@ -21,6 +21,7 @@ class Koko extends React.Component {
         <h1>{ this.state.welcomeMessage }</h1>
         <AskMe socket={this.socket} />
         <ResponseWindow socket={this.socket} max={10} time={10000} />
+        <Speech socket={this.socket} />
       </div>
     );
   }
